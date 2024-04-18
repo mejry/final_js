@@ -1,7 +1,7 @@
 const express=require("express")
 const router=express.Router()
 const Reservationcontrollers=require("../Controllers/ReservationControllers")
-const { validate } = require("../Models/UserModels")
+const { validatelogin ,isAdmin} = require("../Midalwares/JwtValidate")
 router.post("/ajouter/:id",validatelogin,Reservationcontrollers.addReservation)
 router.put("/update/:id",validatelogin,Reservationcontrollers.updateReservation)
 router.delete("/delete/:id",validatelogin,Reservationcontrollers.deleteReservation)

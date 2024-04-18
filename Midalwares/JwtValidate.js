@@ -30,3 +30,4 @@ const isAdmin=async(req,res,next)=>{
         res.status(401).json(error)
     }
 }
+module.exports={validatelogin,isAdmin};
