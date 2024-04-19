@@ -3,6 +3,7 @@ const Salle = require("../Models/SalleModels")
 
 exports.AddSalle=async(req,res)=>{
     try {
+        console.log("hello");
         const existesalle=await Salle.findOne({nom:req.body.nom})
         if(existesalle){
             res.status(401).json("sale d'eja existe")

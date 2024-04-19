@@ -16,7 +16,9 @@ capacité:{
 equipement:{
     type:String
 },
-description:{type:String},
+description:{
+    type:String
+},
 reservation:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"Reservation"

@@ -60,7 +60,7 @@ exports.login = async (req, res) => {
         const existemail = (req.body.email.toLowerCase()).trim()
 
         const existeuser = await User.findOne({ email: existemail});
-
+            console.log(existeuser);
         if (!existeuser) {
             return res.status(401).json("Check your email .");
         }
@@ -109,7 +109,7 @@ exports.login = async (req, res) => {
         };
 
             const token =  jwt.sign(payload, process.env.scretorkey);
-
+                console.log(token);
 
         
 

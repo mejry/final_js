@@ -6,7 +6,7 @@ const validatelogin = function (req,res,next){
     const authHeader = req.headers['authorization'];
     if(!authHeader) return res.status(401).send('Access Denied');
     try {
-    jwt.verify(authHeader, process.env.secretOrkey,(err,user)=>{
+    jwt.verify(authHeader, process.env.scretorkey,(err,user)=>{
 if(err) return res.sendStatus(403)
 req.user = user;
         next();
@@ -30,4 +30,8 @@ const isAdmin=async(req,res,next)=>{
         res.status(401).json(error)
     }
 }
-module.exports={validatelogin,isAdmin};
+
+module.exports={
+    isAdmin:isAdmin,
+    validatelogin:validatelogin
+}

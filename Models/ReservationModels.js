@@ -1,10 +1,10 @@
 const mongoose = require("mongoose")
 
 const ReservationSchema = new mongoose.Schema({
-    date_debut: {type:Date},
-    date_fin: {type:Date}, 
-    heure_debut: {type:Date},
-    heure_fin: {type:Date},
+    date_debut: {type:String},
+    date_fin: {type:String}, 
+    heure_debut: {type:String},
+    heure_fin: {type:String},
    archive:{
     type:Boolean,
     default:false
